@@ -1,52 +1,28 @@
 # main.py
 import os
-from contact import Contact
-from contactbook import ExtendedContactBook
-
-
-#Decorators for changing color of text
-class Colors:
-    BLUE = '\033[94m'
-    RED = '\033[91m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RESET = '\033[0m'
-    BOLD = '\033[1m'
-
-def deco(color: str):
-    colors = {
-        "red": "\033[91m",
-        "green": "\033[92m",
-        "blue": "\033[94m",
-        "yellow": "\033[93m",
-    }
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            print(colors.get(color, ""), end="")
-            result = func(*args, **kwargs)
-            print("\033[0m", end="")
-            return result
-        return wrapper
-    return decorator
-
+from Contact import Contact
+from Contact_Book import ExtendedContactBook
+from decorators import Colors
+global name 
 
 
 CONFIG_FILE = "user_config.txt"
 name = ""
 
 if os.path.exists(CONFIG_FILE):
-    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+    with open(CONFIG_FILE, "r") as f:
         name = f.read().strip().lower()
 else:
     while True:
         input_name = input("Enter your name: ").strip().lower()
         if input_name:
             name = input_name
-            with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+            with open(CONFIG_FILE, "w") as f:
                 f.write(name)
             break
 
 def main():
+    global name
     contact_file = f"{name}_contacts.txt"
     if not os.path.exists(contact_file):
         print(f"{Colors.YELLOW}📝 Creating new contact file: {contact_file}{Colors.RESET}")
