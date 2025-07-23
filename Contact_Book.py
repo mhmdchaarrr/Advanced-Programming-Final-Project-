@@ -21,7 +21,7 @@ class ContactBook:
             return []
 
     def save_contacts(self):
-        with open(self.filename, "w", encoding="utf-8") as f:
+        with open(self.filename, "w") as f:
             for contact in self.contacts:
                 f.write(str(contact) + "\n")
 
