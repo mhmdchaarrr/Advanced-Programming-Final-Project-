@@ -32,11 +32,3 @@ class Contact:
         return (f"{Colors.BLUE}{self.name}{Colors.RESET}, "
                 f"{Colors.RED}{self.phone}{Colors.RESET}, "
                 f"{Colors.YELLOW}{self.email}{Colors.RESET}")
-
-
-# Generator to Read File
-def contact_generator(filename):
-    with open(filename, "r", encoding="utf-8") as f:
-        for line in f:
-            if line.strip():
-                yield Contact.from_line(line)
