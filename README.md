@@ -1,6 +1,6 @@
 # 📇 Advanced Programming Project
 
-This repository contains our **Advanced Programming Project** — a **terminal-based contact management system in Python** that uses a simple text file (`contacts.txt`) to persist data. The application supports adding, editing, deleting, searching, and listing contacts with a user-friendly, colorful interface using ANSI color codes.
+This repository contains our **Advanced Programming Project** — a **terminal-based contact management system in Python** that uses a simple text file to persist data. The application supports adding, editing, deleting, searching, and listing contacts with a user-friendly, colorful interface using ANSI color codes.
 
 ---
 
