@@ -49,4 +49,16 @@ Upon running the program, users are presented with the following menu options:
 
 - The application runs in the terminal/console.
 - All changes are saved in `contacts.txt`.
+
+---
+
+## 🛠️ Using the Makefile
+This project includes a Makefile to simplify running and managing the contact book.
+
+📦 Available Commands
+Command	Description
+- Make run - Runs the main contact book application
+- Make test	- Runs all tests using pytest (if tests exist)
+- Make clean - Deletes temporary files like cache and user data
+
 ---
