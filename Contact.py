@@ -1,3 +1,4 @@
+from decorators import Colors
 class Contact:
     def __init__(self, name, phone, email):
         self.name = name.strip()
