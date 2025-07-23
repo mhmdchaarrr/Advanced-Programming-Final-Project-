@@ -4,7 +4,7 @@ from contact import Contact
 from decorators import Colors
 
 def contact_generator(filename):
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(filename, "r") as f:
         for line in f:
             if line.strip():
                 yield Contact.from_line(line)
