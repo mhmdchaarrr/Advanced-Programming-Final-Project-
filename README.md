@@ -57,8 +57,12 @@ This project includes a Makefile to simplify running and managing the contact bo
 
 📦 Available Commands
 Command	Description
-- Make run - Runs the main contact book application
+- Make venv - Creates a virtual envioroment
+- Make install - Pip installs all the dependancies (Packages)
+- Make run - Runs the main.py
 - Make test	- Runs all tests using pytest (if tests exist)
-- Make clean - Deletes temporary files like cache and user data
+- Make Lint - Make consistant styles eg.spacings, indentations, functions and ordering
+- Make Format - Formats the Code
+- Make clean - Deletes temporary files eg. cache and user data
 
 ---
