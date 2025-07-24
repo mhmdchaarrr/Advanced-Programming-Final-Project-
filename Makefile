@@ -4,6 +4,7 @@
 # Default task
 help:
 	@echo "Usage:"
+	@echo "  make venv      # makes a virtual environment
 	@echo "  make install   # install dependencies"
 	@echo "  make run       # run the contact‑book app"
 	@echo "  make test      # run the test suite"
