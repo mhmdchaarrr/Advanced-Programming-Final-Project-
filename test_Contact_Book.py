@@ -1,7 +1,7 @@
 import os
 import pytest
-from contact import Contact
-from contactbook import ExtendedContactBook
+from Contact import Contact
+from Contact_Book import ExtendedContactBook
 
 @pytest.fixture
 def temp_file(tmp_path):
