@@ -110,7 +110,7 @@ def main():
             else:
                 print(f"{Colors.RED}❌ No contacts found with that name.{Colors.RESET}")
 
-         elif choice == "6":
+        elif choice == "6":
             files_input = input("Enter file names to merge (space-separated): ").strip()
             filenames = [f.strip() for f in files_input.split() if f.strip()]
             if not filenames:
