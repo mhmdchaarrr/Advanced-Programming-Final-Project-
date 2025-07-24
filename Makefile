@@ -1,19 +1,53 @@
-# Makefile for Contact Book
+# Tell make these aren’t real files:
+.PHONY: help install run test lint format clean
 
-# Default Python command
-PYTHON = python
+# Default task
+help:
+	@echo "Usage:"
+	@echo "  make install   # install dependencies"
+	@echo "  make run       # run the contact‑book app"
+	@echo "  make test      # run the test suite"
+	@echo "  make lint      # static analysis (flake8, mypy)"
+	@echo "  make format    # auto‑format code (black, isort)"
+	@echo "  make clean     # remove temp/build files"
 
-# Default run target
+SHELL    := /bin/bash
+.ONESHELL:
+VENV     := .venv
+
+.PHONY: venv install run test lint format clean
+
+venv:
+	python3 -m venv $(VENV)
+
+install: venv
+	source $(VENV)/bin/activate
+	pip install -r requirements.txt
+
 run:
-	$(PYTHON) main.py
+	source $(VENV)/bin/activate
+	python main.py
 
-# Run tests (if using pytest)
 test:
-	pytest
+	source $(VENV)/bin/activate
+	pytest --maxfail=1 --disable-warnings -q
 
-# Remove generated files
+# Lint and type‑check
+lint:
+	source $(VENV)/bin/activate
+	flake8 .
+	mypy .
+
+# Auto‑format
+format:
+	source $(VENV)/bin/activate
+	black .
+	isort .
+
+# Clean up caches, __pycache__, pyc files, etc.
 clean:
-	rm -f *.pyc
-	rm -rf __pycache__
-	rm -f user_config.txt
-	rm -f *_contacts.txt
+	source $(VENV)/bin/activate
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	find . -type f -name "*.py[co]" -delete
+	rm -rf .pytest_cache/
+
