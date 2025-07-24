@@ -1,6 +1,6 @@
 # test_contact.py
 import pytest
-from contact import Contact
+from Contact import Contact
 
 def test_create_valid_contact():
     c = Contact("Alice", "1234567890", "alice@example.com")
