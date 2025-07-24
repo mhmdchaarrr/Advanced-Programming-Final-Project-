@@ -1,6 +1,6 @@
 # contactbook.py
 import os
-from contact import Contact
+from Contact import Contact
 from decorators import Colors
 
 def contact_generator(filename):
