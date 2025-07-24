@@ -8,6 +8,7 @@ help:
 	@echo "  make install   # install dependencies"
 	@echo "  make run       # run the contact‑book app"
 	@echo "  make test      # run the test suite"
+	@echo "  make lint      # run flake8 and mypy checks"
 	@echo "  make format    # auto‑format code (black)"
 	@echo "  make clean     # remove temp/build files"
 
