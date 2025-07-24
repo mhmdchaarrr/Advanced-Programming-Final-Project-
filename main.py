@@ -38,8 +38,9 @@ def main():
         print("3. Edit Contact")
         print("4. Delete Contact")
         print("5. Search Contact")
-        print("6. Exit")
-        print("7. Merge Contacts from File(s)")
+        print("6. Merge Contacts from File(s)")
+        print("7. Exit")
+        
 
         choice = input("Enter choice (1–7): ").strip()
 
@@ -109,17 +110,19 @@ def main():
             else:
                 print(f"{Colors.RED}❌ No contacts found with that name.{Colors.RESET}")
 
-        elif choice == "6":
-            print("👋 Exiting Contact Book. Goodbye!")
-            break
-
-        elif choice == "7":
+         elif choice == "6":
             files_input = input("Enter file names to merge (space-separated): ").strip()
             filenames = [f.strip() for f in files_input.split() if f.strip()]
             if not filenames:
                 print(f"{Colors.RED}❌ No files entered.{Colors.RESET}")
                 continue
 
+
+        elif choice == "7":
+            print("👋 Exiting Contact Book. Goodbye!")
+            break
+
+       
             try:
                 book.concat_multiple_files(*filenames)
                 print(f"{Colors.GREEN}✅ Successfully merged contacts from: {', '.join(filenames)}{Colors.RESET}")
