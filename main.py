@@ -128,13 +128,6 @@ def main():
             print("👋 Exiting Contact Book. Goodbye!")
             break
 
-       
-            try:
-                book.concat_multiple_files(*filenames)
-                print(f"{Colors.GREEN}✅ Successfully merged contacts from: {', '.join(filenames)}{Colors.RESET}")
-            except Exception as e:
-                print(f"{Colors.RED}❌ Failed to merge: {e}{Colors.RESET}")
-
         else:
             print(f"{Colors.RED}❗ Invalid option. Please enter a number from 1 to 7.{Colors.RESET}")
 
