@@ -8,8 +8,7 @@ help:
 	@echo "  make install   # install dependencies"
 	@echo "  make run       # run the contact‑book app"
 	@echo "  make test      # run the test suite"
-	@echo "  make lint      # static analysis (flake8, mypy)"
-	@echo "  make format    # auto‑format code (black, isort)"
+	@echo "  make format    # auto‑format code (black)"
 	@echo "  make clean     # remove temp/build files"
 
 SHELL    := /bin/bash
@@ -43,7 +42,6 @@ lint:
 format:
 	source $(VENV)/bin/activate
 	black .
-	isort .
 
 # Clean up caches, __pycache__, pyc files, etc.
 clean:
